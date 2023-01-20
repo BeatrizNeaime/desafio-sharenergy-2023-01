@@ -1,0 +1,19 @@
+.container-usuarios{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.users-card{
+    max-width: 20%;
+    margin-bottom: 1rem;
+    width: auto;
+}
+
+.users-container {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 1rem;
+    width: 100%;
+}

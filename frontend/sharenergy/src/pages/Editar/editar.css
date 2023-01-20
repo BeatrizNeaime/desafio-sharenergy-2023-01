@@ -1,0 +1,23 @@
+.editar-caixa{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.editar-container{
+    align-items: center;
+    display: flex !important;
+    height: 90vh;
+    justify-content: space-evenly;
+}
+
+.editar-form-container{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+}
+
+.editar-input{
+    margin-right: 15px !important;
+}

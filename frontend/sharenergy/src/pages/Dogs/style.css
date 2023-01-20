@@ -1,0 +1,11 @@
+.my-container{
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    height: 90vh;
+}
+
+.dog-img{
+    max-height: 400px;
+    height: auto;
+}

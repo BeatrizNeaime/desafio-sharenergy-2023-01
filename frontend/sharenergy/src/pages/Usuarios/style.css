@@ -1,0 +1,15 @@
+.client-cont{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 95vh;
+}
+
+.grid {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    height: 90vh;
+}
+

@@ -1,0 +1,30 @@
+.btn-link, .btn-link:hover{
+    color: #fefefe;
+    text-decoration: none;
+}
+
+.button-div{
+    align-items: center;
+    display: flex;
+    justify-content: end;
+    width: 90%;
+}
+
+.clients-container{
+    align-items: center;
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 1.5rem;
+}
+
+.title-div{
+    padding: 1rem;
+    text-align: center;
+}
+
+.testee{
+    margin-bottom: 1rem;
+    max-width: 300px;
+    width: auto !important;
+}

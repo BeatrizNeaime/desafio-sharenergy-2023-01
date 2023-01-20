@@ -1,0 +1,35 @@
+.cat-container{
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.cat-cont-cont{
+    align-items: center;
+    display: flex;
+    gap: 2%;
+    justify-content: center;
+    width: 90%;
+}
+
+.cat-cont{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 90vh;
+    padding: 10px;
+}
+
+.cat-img{
+    max-height: 400px;
+    height: auto;
+    padding: 1rem;
+}
+
+.img-div{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
