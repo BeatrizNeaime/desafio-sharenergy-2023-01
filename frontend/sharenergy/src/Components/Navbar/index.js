@@ -6,7 +6,7 @@ import './style.css'
 
 function BasicExample() {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" className="navbar" >
       <Container>
         <Navbar.Brand><Link to="/" className='nav-link' >e-Client</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

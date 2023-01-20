@@ -91,7 +91,7 @@ const Clientes = () => {
 
     const handleUF = (e) => {
         const { value } = e.target
-        setUF(value)
+        setUF(value.substring(0, 2))
     }
 
     const sendForm = async (e) => {
@@ -107,9 +107,12 @@ const Clientes = () => {
         try {
             await fetch(url, options)
             handleClose()
+            setTimeout(() => {
+                window.location.reload()
+            }, 3000);
             toast.success('Cliente adicionado com sucesso!', {
                 position: "top-center",
-                autoClose: 5000,
+                autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -117,7 +120,6 @@ const Clientes = () => {
                 progress: undefined,
                 theme: "light",
             });
-            window.location.reload()
         } catch (error) {
             toast.error(`${error}`, {
                 position: "top-right",
@@ -180,25 +182,27 @@ const Clientes = () => {
                                             <p>bairro: {client.bairro}</p>
                                             <p>cidade: {client.cidade}</p>
                                             <p>UF: {client.uf}</p>
-                                            <p>id: {client._id}</p>
                                         </Typography>
                                     </AccordionDetails>
                                 </Accordion>
                             </CardContent>
                             <CardActions>
-                                <Button size="small" onClick={console.log(client._id)}>
+                                <Button size="small">
                                     <Link className='btn-link' to={`/editar-cliente/${client._id}`}>
                                         <MdBorderColor /> Editar
                                     </Link>
                                 </Button>
                                 <Button size="small" >
-                                    <MdOutlineDeleteForever /> Excluir
+                                    <Link className='btn-link' to={`/excluir-cliente/${client._id}`}>
+                                        <MdOutlineDeleteForever /> Excluir
+                                    </Link>
                                 </Button>
                             </CardActions>
                         </Card>
                     ))
                 }
             </Container>
+
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Adicionar Usuário</Modal.Title>

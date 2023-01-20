@@ -9,9 +9,12 @@ routes.get('/clientes', ClientController.index)
 routes.post('/clientes', ClientController.store)
 
 /*-- GET BY USERNAME/NOME ---*/
-routes.get('/clientes/:username', ClientController.username)
+routes.get('/clientes/:_id', ClientController.username)
+
+/*--- UPDATE CLIENTE ---*/
+routes.patch('/clientes/:_id', ClientController.update)
 
 /*--- DELETE CLIENTE ---*/
-routes.delete('/editar-cliente/:_id', ClientController.delete)
+routes.delete('/clientes/:_id', ClientController.delete)
 
 module.exports = routes

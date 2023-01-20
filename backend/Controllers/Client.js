@@ -12,8 +12,8 @@ const Cliente = require('../Models/Client')
      },
 
      async username(req, res) {
-         const { username } = req.params
-         const users = await Cliente.findOne({ username })
+         const { _id } = req.params
+         const users = await Cliente.findOne({ _id })
          res.json(users)
      },
 
@@ -21,6 +21,12 @@ const Cliente = require('../Models/Client')
          const { _id } = req.params
          const del = await Cliente.findByIdAndDelete(_id)
          res.json(del)
-     }
+     },
+
+     async update(req, res) {
+        const { _id } = req.params
+        const updated = await Cliente.updateOne({_id},{$set: req.body})
+        res.json(updated)
+    }
  }
 
