@@ -17,6 +17,12 @@ const Cliente = require('../Models/Client')
          res.json(users)
      },
 
+     async email(req,res){
+        const { email } = req.params
+         const users = await Cliente.findOne({ email })
+         res.json(users)
+     },
+
      async delete(req, res) {
          const { _id } = req.params
          const del = await Cliente.findByIdAndDelete(_id)
@@ -24,9 +30,24 @@ const Cliente = require('../Models/Client')
      },
 
      async update(req, res) {
-        const { _id } = req.params
-        const updated = await Cliente.updateOne({_id},{$set: req.body})
+        const { _id, firstName, lastName, email, cel, cpf, rua, numero, bairro, cidade,uf } = req.body
+        let atualizar = {}
+
+        atualizar = {
+            firstName,
+            lastName,
+            email,
+            cel,
+            cpf,
+            rua,
+            numero,
+            bairro,
+            cidade,
+            uf
+        }
+
+        const updated = await Cliente.findByIdAndUpdate({_id}, atualizar, {new: true})
         res.json(updated)
     }
  }
-
+ 

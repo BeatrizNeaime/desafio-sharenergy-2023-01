@@ -1,8 +1,9 @@
 import * as React from 'react';
 import './style.css'
-import Container from '@mui/material/Container';
 import Users from '../../Components/Users';
 
+/*--- MUI ---*/
+import Container from '@mui/material/Container';
 
 const Usuarios = () => {
   return (
@@ -10,7 +11,9 @@ const Usuarios = () => {
       <div className='title-div'>
         <h2 id="inicio" >Random Users API</h2>
       </div>
-      <Users />
+      <Container maxWidth="lg">
+        <Users />
+      </Container>
     </Container>
   )
 }

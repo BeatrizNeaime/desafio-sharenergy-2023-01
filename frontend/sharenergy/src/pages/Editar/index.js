@@ -39,8 +39,7 @@ const Editar = () => {
     const getUser = async () => {
         const a = await fetch(`http://localhost:3001/clientes/${id}`)
         const b = await a.json()
-        console.log(id, b)
-
+        
         setNome(b.firstName)
         setSobrenome(b.lastName)
         setEmail(b.email)
@@ -55,17 +54,29 @@ const Editar = () => {
 
     const updateUser = async (e) => {
         e.preventDefault()
+        let url = 'http://localhost:3001/clientes';
+
         let options = {
-            method: 'PATCH',
-            body: { nome, sobrenome, email, cel, cpf, rua, numero, cidade, uf }
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ "_id": id, "firstName": nome, "lastName": sobrenome, "email": email, "cel": cel, "cpf": cpf, "rua": rua, "numero": numero, "bairro": bairro, "cidade": cidade, "uf": uf })
         };
+
         try {
-            console.log(nome, sobrenome, email, cel, cpf, rua, numero, cidade, uf);
-            const a = await fetch(`http://localhost:3001/clientes/${id}`, options)
+            const a = await fetch(url, options)
             const b = await a.json()
-            console.log(b)
-            console.log(options)
-        } catch (error) { 
+            navigate("/clientes")
+            toast.success('Cliente atualizado com sucesso!', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        } catch (error) {
             toast.error(`${error}`, {
                 position: "top-center",
                 autoClose: 5000,
@@ -100,15 +111,15 @@ const Editar = () => {
                             <TextField id="outlined-basic" variant="outlined" required value={cel} onChange={(e) => { setCel(e.target.value) }} />
                         </div>
                         <div className="editar-form-container">
-                            <TextField id="outlined-basic" variant="outlined" required value={rua} className="editar-input-max" onChange={(e)=>{setRua(e.target.value)}}/>
+                            <TextField id="outlined-basic" variant="outlined" required value={rua} className="editar-input-max" onChange={(e) => { setRua(e.target.value) }} />
                         </div>
                         <div className="editar-form-container">
-                            <TextField id="outlined-basic" variant="outlined" required value={numero} className="editar-input" onChange={(e)=>{setNumero(e.target.value)}}/>
-                            <TextField id="outlined-basic" variant="outlined" required value={bairro} onChange={(e)=>{setBairro(e.target.value)}}/>
+                            <TextField id="outlined-basic" variant="outlined" required value={numero} className="editar-input" onChange={(e) => { setNumero(e.target.value) }} />
+                            <TextField id="outlined-basic" variant="outlined" required value={bairro} onChange={(e) => { setBairro(e.target.value) }} />
                         </div>
                         <div className="editar-form-container">
-                            <TextField id="outlined-basic" variant="outlined" required value={cidade} className="editar-input" onChange={(e)=>{setCidade(e.target.value)}}/>
-                            <TextField id="outlined-basic" variant="outlined" required value={uf} onChange={(e)=>{setUF(e.target.value)}}/>
+                            <TextField id="outlined-basic" variant="outlined" required value={cidade} className="editar-input" onChange={(e) => { setCidade(e.target.value) }} />
+                            <TextField id="outlined-basic" variant="outlined" required value={uf} onChange={(e) => { setUF(e.target.value) }} />
                         </div>
                     </CardContent>
                     <CardActions>

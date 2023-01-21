@@ -14,25 +14,27 @@ import Login from './pages/Login';
 
 function App() {
 
+  let isLogged = window.localStorage.getItem("isLogged")
+
   return (
     <div className="App">
       <Router>
         <BasicExample />
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/usuarios" element={<Usuarios />} />
-          <Route path="/clientes" element={<Clientes />} />
-          <Route path="/dogs" element={<Dogs />} />
-          <Route path="/cats" element={<Cats />} />
-          <Route path="/editar-cliente/:id" element={<Editar />} />
-          <Route path="/excluir-cliente/:id" element={<Excluir />} />
+          <Route path="/login" element={isLogged == null ? <Login/> : <Usuarios/>} />
+          <Route path="/clientes" element={isLogged == null ? <Login/> : <Clientes/>} />
+          <Route path="/usuarios" element={isLogged == null ? <Login/> : <Usuarios/>} />
+          <Route path="/dogs" element={isLogged == null ? <Login/> : <Dogs/>} />
+          <Route path="/cats" element={isLogged == null ? <Login/> : <Cats/> } />
+          <Route path="/editar-cliente/:id" element={isLogged == null ? <Login/> : <Editar/>} />
+          <Route path="/excluir-cliente/:id" element={isLogged == null ? <Login/> : <Excluir/>} />
         </Routes>
       </Router>
       <ToastContainer
         position="top-center"
         autoClose={5000}
         hideProgressBar={false}
-        newestOnTop={false}
+        newestOnTop
         closeOnClick
         rtl={false}
         pauseOnFocusLoss

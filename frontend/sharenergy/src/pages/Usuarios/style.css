@@ -13,3 +13,14 @@
     height: 90vh;
 }
 
+.users-input{
+    width: 50%;
+}
+
+.users-search{
+    align-items: center;
+    display: flex !important;
+    gap: 1%;
+    justify-content: center;
+}
+

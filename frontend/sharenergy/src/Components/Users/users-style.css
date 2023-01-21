@@ -3,17 +3,31 @@
     justify-content: space-evenly;
 }
 
+.paginacao{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem !important;
+}
+
+.users-box{
+    padding-bottom: 2rem;
+}
+
 .users-card{
     max-width: 20%;
     margin-bottom: 1rem;
-    width: auto;
+    width: auto !important;
 }
 
 .users-container {
     align-items: center;
-    display: flex;
+    display: flex !important;
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin: 1rem;
     width: 100%;
+}
+
+.usuarios-form{
+    margin-bottom: 2rem !important;
 }
