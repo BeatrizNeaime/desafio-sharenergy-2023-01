@@ -9,7 +9,3 @@ Para executar a aplicação, é necessário que se faça um `git clone` desta br
 
 * ### Quais tecnologias foram utlizadas?
 Para este desafio, utilizei ReactJS e NodeJS
-
-* ### O layout está responsivo?
-Sim. Como o intuito do desafio é um sistema limpo e responsivo, utilizei bibliotecas de componentes ReactJS, como [React Bootstrap](https://react-bootstrap.github.io/getting-started/introduction/) e [React MUI Components](https://mui.com/material-ui/getting-started/overview/)
-
